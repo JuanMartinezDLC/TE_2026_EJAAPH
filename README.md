@@ -1,4 +1,4 @@
-# Nombre del equipo: EJAA
+# Nombre del equipo: EJAAPH
 
 ## Integrantes
 
