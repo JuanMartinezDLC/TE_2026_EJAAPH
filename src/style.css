@@ -156,7 +156,11 @@ p {
 }
 
 .logo {
-    width: 40px;
+    width: 100%;
+    max-width: 50px;
+    height: 100%;
+    max-height: 50px;
+    border-radius: 50%;
 }
 
 nav {
