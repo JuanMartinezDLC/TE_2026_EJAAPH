@@ -1,0 +1,402 @@
+/* Paleta de colores */
+ :root{
+    --principal: #F1F5F9;      /* Texto principal claro */
+    --acento: #6C4CFF;         /* Morado tecnológico */
+    --acento-hover: #8F7CFF;   /* Morado claro */
+    --oscuro: #131d3a;         /* Azul oscuro para tarjetas */
+    --blanco: #F1F5F9;
+    --fondo-gris-suave: #121A33;
+    --texto-gris: #C3CAD5;
+    --texto-principal: #F1F5F9;
+    --texto-secundario: #C3CAD5;
+    --fondo-body: #0A0F1F;     /* Azul muy oscuro */
+    --fondo-header: rgba(18, 15, 48);   /* Semi-transparente */
+    --fondo-cards:  rgb(18, 15, 48);     
+    --fondo-seccion-alt: #0F1730;
+    --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Fuentes */
+    --fuente-titulos: 'Space Grotesk', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Navegación fluida  */
+}
+
+/* H1 — Título principal */
+h1 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+/* H2 — Títulos de sección */
+h2 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.3;
+}
+
+/* H3 — Subtítulos */
+h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.35;
+}
+
+/* Body — Texto principal */
+p {
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background-color: var(--fondo-principal);
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-btn {
+    width: 35px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 4px;
+    background: var(--texto-principal);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+/* ANIMACIÓN A "X" */
+.menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-panel {
+    position: absolute;
+    z-index: 2000;
+    top: 70px;
+    left: 10%;
+    background: var(--fondo-cards);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 200px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.menu-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.menu-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-panel li {
+    margin: 10px 0;
+}
+
+.menu-panel a {
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu-panel a:hover {
+    color: var(--acento);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*Cuerpo*/
+body {
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: var(--fondo-body);
+    color: var(--texto-principal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==============Apartado 4 y paginas de desarrolladores ============*/
+.desarrolladores {
+    padding: 80px 10%;
+    background-color: var(--fondo-gris-suave);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.desarrolladores > p {
+    color: var(--texto-secundario);
+    margin-bottom: 50px;
+}
+
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.desarrollador {
+    background: var(--fondo-cards);
+    border-radius: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración superior sutil */
+.desarrollador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--principal), var(--acento));
+}
+
+/* Micro-interacción: Elevación y Sombra Cian */
+.desarrollador:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 168, 204, 0.2); 
+}
+
+.team-img-wrapper {
+    margin-bottom: 20px;
+}
+
+
+/* Imagen de perfil real */
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Micro-interacción: Rotación del Avatar */
+.desarrollador:hover .team-avatar {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.team-info h3 {
+    color: var(--texto-principal);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.team-role {
+    font-family: var(--fuente-texto);
+    color: var(--acento);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.team-info p {
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Animación de los enlaces ocultos */
+.perfil-link {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px); /* Empieza un poco abajo */
+    transition: all 0.4s ease;
+}
+
+/* Los enlaces aparecen suavemente al hacer hover */
+.desarrollador:hover .perfil-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.perfil-btn {
+    font-family: var(--fuente-texto);
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.perfil-btn:hover {
+    background-color: var(--acento);
+    color: var(--blanco);
+    border-color: var(--acento);
+}
+
+/* ------ Diseño para pagina personañ------ */
+.perfil-completo {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: var(--fondo-seccion-alt);
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+/* Efecto de gradiente sutil en el fondo */
+.perfil-completo::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, rgba(108, 76, 255, 0.05));
+    pointer-events: none;
+}
+
+.perfil-completo h2 {
+    color: var(--principal);
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.perfil-completo > p {
+    color: var(--texto-secundario);
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+}
+
+.grid-datos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.card {
+    background: var(--fondo-cards);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--acento), var(--acento-hover));
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 50px rgba(108, 76, 255, 0.2);
+    border-color: var(--acento);
+}
+
+.card h3 {
+    color: var(--principal);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--texto-secundario);
+    line-height: 1.6;
+}
+
+.foto-perfil {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+.foto-perfil:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ============ Pie de página ============ */
+footer {
+    background: var(--fondo-header);
+    color: var(--texto-gris);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

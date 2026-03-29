@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pagina - Perfiles de desarrolladores">
+    <title>Desarrolladores</title>
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+
+<body>
+     <!-- Encabezado-->
+    <header class="header">
+    
+    <!-- BOTÓN HAMBURGUESA -->
+        <div class="menu">
+            <button id="menu-btn" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="menu-panel" class="menu-panel">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../apartado1.html">Teoría Básica IS</a></li>
+                    <li><a href="../apartado2.html">Patrones</a></li>
+                    <li><a href="../apartado3.html">Scrum</a></li>
+                    <li><a href="../apartado4.html">Desarrolladores</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <h1>Desarrolladores</h1>
+            <img src="../src/image/logo.png" class="logo">
+        </div>
+    </header>
+
+    <!-- Diseño final de pagina personal -->
+    <section class="perfil-completo">
+        
+        <img src="../src/image/alejandra.jpeg" alt="Alejandra" class="foto-perfil">
+               
+         <h2>Alejandra</h2>
+
+            <div class="grid-datos">
+                <div class="card" >
+                    <h3>Mis tecnológicas favoritas</h3>
+                    <p>Mis tecnologias favortitas para pasar el tiempo son plataformas de streaming y redes sociales.
+                        Para realizar mis tareas escolares y proyectos me gusta usar Visual Studio Code, GitHub y Canva.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Semestre</h3>
+                    <p>Estoy cursando el semestre 2026-2,y es mi sexto semestre de la carrera.</p>
+                </div>
+                <div class="card">
+                    <h3>Hobies</h3>
+                    <p>Me gusta ver animes, leer mangas, escuhar musica mientras estoy recostada en mi cama y me gusta bailar todo tipo de genero musical.</p>
+                </div>
+            </div>
+    </section>
+
+     <footer>
+        <p>&copy; 2026 Temas especiales computacion - EJAAPH - FES Aragón, UNAM</p>
+        <p>Proyecto Scrum</p>
+    </footer>
+
+    <!-- Parte de script-->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const panel = document.getElementById("menu-panel");
+
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("active");
+            panel.classList.toggle("active");
+        });
+
+        /* Cerrar al hacer clic fuera */
+        document.addEventListener("click", (e) => {
+            if (!btn.contains(e.target) && !panel.contains(e.target)) {
+                btn.classList.remove("active");
+                panel.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>
