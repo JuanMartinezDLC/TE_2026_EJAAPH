@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrones de Diseño</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="src/style.css">
+    <style>
+        /* Pequeños ajustes para mejor separación entre secciones (sin tocar tu CSS original) */
+        .seccion-titulo {
+            margin: 100px 0 40px 0;
+            text-align: center;
+        }
+        .seccion-titulo h2 {
+            font-size: 2.8rem;
+            color: var(--principal);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER UNIFICADO CON NAVEGACIÓN -->
+    <header class="header">
+        <nav>
+
+
+            <button class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Menú hamburguesa -->
+<div class="menu-panel" id="menuPanel">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="apartado1.html">Ingeniería de Software</a></li>
+                <li><a href="apartado2.html">Patrones de Diseño</a></li>
+                <li><a href="apartado3.html">Scrum</a></li>
+                <li><a href="apartado4.html">Desarrolladores</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ====================== SECCIÓN 1: PATRONES ====================== -->
+    <section id="patrones" class="desarrolladores">
+        <h1>Patrones de Diseño</h1>
+        
+        <p>Un patrón de diseño es una solución general y probada que se repite para resolver problemas comunes que 
+        aparecen en el diseño de software. No se trata de código listo para copiar, sino de una especie de 
+        plantilla o guía que muestra cómo organizar clases y objetos de forma eficiente. La idea es que, 
+        en lugar de empezar desde cero cada vez que surge un problema similar, puedas aplicar una estructura 
+        que ya ha demostrado que funciona bien en muchos proyectos. Aqui unos ejemplos de patrones de diseño comunes:</p>
+
+        <div class="grid-equipo">
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Singleton</h3>
+                    <p class="team-role">Patrón Creacional</p>
+                    <p>Garantiza que una clase tenga una sola instancia y proporciona un punto de acceso global a ella.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Factory Method</h3>
+                    <p class="team-role">Patrón Creacional</p>
+                    <p>Define una interfaz para crear un objeto, pero permite que las subclases alteren el tipo de objeto que se creará.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Observer</h3>
+                    <p class="team-role">Patrón de Comportamiento</p>
+                    <p>Define una dependencia uno-a-muchos entre objetos, de manera que cuando un objeto cambia de estado, todos sus dependientes son notificados y actualizados automáticamente.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Strategy</h3>
+                    <p class="team-role">Patrón de Comportamiento</p>
+                    <p>Define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables. Strategy permite que el algoritmo varíe independientemente de los clientes que lo utilicen.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Decorator</h3>
+                    <p class="team-role">Patrón Estructural</p>
+                    <p>Agrega responsabilidades adicionales a un objeto dinámicamente. Los decoradores proporcionan una alternativa flexible a la herencia para extender funcionalidades.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Builder</h3>
+                    <p class="team-role">Patrón Creacional</p>
+                    <p>Separa la construcción de un objeto complejo de su representación, permitiendo que el mismo proceso de construcción cree diferentes representaciones.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Adapter</h3>
+                    <p class="team-role">Patrón Estructural</p>
+                    <p>Permite que interfaces incompatibles trabajen juntas. Convierte la interfaz de una clase en otra que el cliente espera.</p>
+                </div>
+            </div>
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Facade</h3>
+                    <p class="team-role">Patrón Estructural</p>
+                    <p>Proporciona una interfaz simplificada a un conjunto complejo de interfaces en un subsistema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== SECCIÓN 2: CATEGORÍAS ====================== -->
+    <section id="categorias" class="desarrolladores" style="background-color: var(--fondo-seccion-alt);">
+        <div class="seccion-titulo">
+            <h2>Categorías de Patrones de Diseño</h2>
+        </div>
+        
+        <p>Los patrones de diseño se dividen en tres categorías principales, según el tipo de problema que resuelven:</p>
+
+        <div class="grid-equipo">
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Patrones Creacionales</h3>
+                    <p class="team-role">Creación de Objetos</p>
+                    <p>Se centran en la forma de crear objetos. Ayudan a controlar y hacer más flexible el proceso de instanciar clases, para que no dependas siempre del mismo método rígido. Ejemplos comunes son el Singleton, el Factory Method o el Abstract Factory.</p>
+                </div>
+            </div>
+
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Patrones Estructurales</h3>
+                    <p class="team-role">Composición de Clases</p>
+                    <p>Se ocupan de cómo se componen y organizan las clases y objetos para formar estructuras más grandes y útiles. Sirven para que partes del código que no encajan naturalmente puedan trabajar juntas sin problemas. Ejemplos: Adapter, Decorator o Proxy.</p>
+                </div>
+            </div>
+
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Patrones de Comportamiento</h3>
+                    <p class="team-role">Interacción entre Objetos</p>
+                    <p>Definen cómo interactúan los objetos entre sí y cómo se reparten las responsabilidades. Ayudan a que el flujo de comunicación y las acciones entre partes del programa sean más claras y flexibles. Ejemplos: Observer, Strategy o Command.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== SECCIÓN 3: IMPORTANCIA ====================== -->
+    <section id="importancia" class="desarrolladores">
+        <div class="seccion-titulo">
+            <h2>Importancia de los Patrones de Diseño</h2>
+        </div>
+        
+        <div class="grid-equipo">
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Reutilización y Mantenibilidad</h3>
+                    <p class="team-role">Beneficios Principales</p>
+                    <p>Los patrones de diseño son útiles porque facilitan la reutilización de soluciones que ya funcionan en lugar de inventar algo nuevo cada vez. Esto ahorra tiempo, reduce errores y hace que el código sea más limpio y fácil de entender para cualquiera que lo mire después.</p>
+                </div>
+            </div>
+
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Escalabilidad y Flexibilidad</h3>
+                    <p class="team-role">Crecimiento del Software</p>
+                    <p>Además, ayudan a que el software sea más escalable: puedes agregar nuevas funcionalidades, manejar más usuarios o crecer el proyecto sin que todo se vuelva un lío complicado de mantener o modificar.</p>
+                </div>
+            </div>
+
+            <div class="desarrollador">
+                <div class="team-info">
+                    <h3>Ejemplo Real: Singleton en Aplicaciones Empresariales</h3>
+                    <p class="team-role">Uso en Frameworks</p>
+                    <p>En muchas aplicaciones grandes, como frameworks de Java (por ejemplo en Spring) o en gestores de bases de datos, se usa el Singleton para asegurar que solo exista una sola instancia de algo crítico, como una conexión a la base de datos o un objeto de configuración global. Esto evita que se creen múltiples conexiones innecesarias, ahorra recursos y evita problemas de inconsistencia. Gracias a esto, sistemas que manejan miles de usuarios al mismo tiempo se mantienen estables y eficientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 - Patrones de Diseño | Temas Especiales en Computación - EJAAPH - FES Aragón, UNAM</p>
+    </footer>
+
+<!-- Script del menú hamburguesa -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            menuPanel.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.menu-panel a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                menuPanel.classList.remove('active');
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !menuPanel.contains(e.target)) {
+                menuBtn.classList.remove('active');
+                menuPanel.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
