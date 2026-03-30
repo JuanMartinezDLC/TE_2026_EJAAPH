@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I.S</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
@@ -99,23 +99,7 @@
     </footer>
 
     <!-- Script del menú hamburguesa -->
-    <script>
-        const btn = document.getElementById("menu-btn");
-        const panel = document.getElementById("menu-panel");
-
-        btn.addEventListener("click", () => {
-            btn.classList.toggle("active");
-            panel.classList.toggle("active");
-        });
-
-        /* Cerrar al hacer clic fuera */
-        document.addEventListener("click", (e) => {
-            if (!btn.contains(e.target) && !panel.contains(e.target)) {
-                btn.classList.remove("active");
-                panel.classList.remove("active");
-            }
-        });
-    </script>
+    <script src="src/js/menu.js"></script>
 
 </body>
 
