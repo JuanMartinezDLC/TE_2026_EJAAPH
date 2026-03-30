@@ -198,8 +198,16 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 10%;
-    background: radial-gradient(circle at top right, rgba(108, 76, 255, 0.15), transparent),
-        radial-gradient(circle at bottom left, rgba(143, 124, 255, 0.1), transparent);
+    /* Nuevo fondo: Capa oscura + Capa morado/azul + Imagen */
+    background: linear-gradient(135deg,
+            rgba(26, 10, 48, 0.92) 0%,
+            rgba(138, 76, 255, 0.55) 100%),
+        url('../image/FESARAGON.jpeg');
+    background-size: cover;
+    background-position: center 85%;
+    /* Se movió hacia abajo para centrar mejor el letrero */
+    background-attachment: fixed;
+    /* Efecto Parallax para toque premium */
     position: relative;
     overflow: hidden;
 }
@@ -545,6 +553,11 @@ footer {
     }
 
     /* Hero */
+    .hero {
+        background-attachment: scroll;
+        /* Desactivamos el fijado en móvil para mejor rendimiento */
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
