@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrum | EJAAPH</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
+
 <body>
     <header class="header">
         <div class="menu">
-            <button id="menu-btn" class="menu-btn"><span></span><span></span><span></span></button>
+            <button id="menu-btn" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav id="menu-panel" class="menu-panel">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -21,28 +27,32 @@
             </nav>
         </div>
         <div class="header-right">
-            <h1>Scrum framework</h1>
-            <img src="src/image/logo.png" class="logo">
+            <img src="src/image/logo.png" class="logo" alt="EJAAPH Logo">
         </div>
     </header>
 
     <section class="perfil-completo" style="text-align: left;">
         <h2>¿Qué es Scrum y para qué sirve?</h2>
         <p>Scrum es un marco de trabajo ágil utilizado principalmente en el desarrollo de software.</p>
-        
+
         <div class="card" style="margin-bottom: 40px;">
-            <p>Su propósito es mejorar la productividad y la calidad del producto mediante ciclos de trabajo cortos llamados <strong>sprints</strong>, en los cuales se entrega un incremento funcional. Este enfoque permite adaptarse fácilmente a los cambios en los requisitos y mantener una comunicación constante entre los miembros del equipo.</p>
+            <p>Su propósito es mejorar la productividad y la calidad del producto mediante ciclos de trabajo cortos
+                llamados <strong>sprints</strong>, en los cuales se entrega un incremento funcional. Este enfoque
+                permite adaptarse fácilmente a los cambios en los requisitos y mantener una comunicación constante entre
+                los miembros del equipo.</p>
         </div>
 
         <h3>Roles principales en Scrum</h3>
         <div class="grid-datos">
             <div class="card">
                 <h3>Scrum Master</h3>
-                <p>Se encarga de facilitar el proceso y asegurar que se sigan las prácticas de Scrum, eliminando impedimentos.</p>
+                <p>Se encarga de facilitar el proceso y asegurar que se sigan las prácticas de Scrum, eliminando
+                    impedimentos.</p>
             </div>
             <div class="card">
                 <h3>Product Owner</h3>
-                <p>Responsable de definir, priorizar y gestionar los requisitos del producto, enfocándose en maximizar su valor.</p>
+                <p>Responsable de definir, priorizar y gestionar los requisitos del producto, enfocándose en maximizar
+                    su valor.</p>
             </div>
             <div class="card">
                 <h3>Development Team</h3>
@@ -58,10 +68,20 @@
     <script>
         const btn = document.getElementById("menu-btn");
         const panel = document.getElementById("menu-panel");
+
         btn.addEventListener("click", () => {
             btn.classList.toggle("active");
             panel.classList.toggle("active");
         });
+
+        /* Cerrar al hacer clic fuera */
+        document.addEventListener("click", (e) => {
+            if (!btn.contains(e.target) && !panel.contains(e.target)) {
+                btn.classList.remove("active");
+                panel.classList.remove("active");
+            }
+        });
     </script>
 </body>
+
 </html>

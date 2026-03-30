@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,41 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="src/style.css">
 </head>
+
 <body>
 
     <!-- HEADER CONSISTENTE -->
     <header class="header">
-        <nav>
-
-            <button class="menu-btn" id="menuBtn">
+        <div class="menu">
+            <button id="menu-btn" class="menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-        </nav>
 
-        <!-- Menú hamburguesa -->
-        <div class="menu-panel" id="menuPanel">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="apartado1.html">Ingeniería de Software</a></li>
-                <li><a href="apartado2.html">Patrones de Diseño</a></li>
-                <li><a href="apartado3.html">Scrum</a></li>
-                <li><a href="apartado4.html">Desarrolladores</a></li>
-            </ul>
+            <nav id="menu-panel" class="menu-panel">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="apartado1.html">Teoría Básica IS</a></li>
+                    <li><a href="apartado2.html">Patrones</a></li>
+                    <li><a href="apartado3.html">Scrum</a></li>
+                    <li><a href="apartado4.html">Desarrolladores</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-right">
+            <img src="src/image/logo.png" class="logo" alt="EJAAPH Logo">
         </div>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
     <section class="desarrolladores">
         <h1>Ingeniería de Software</h1>
-        
-        <p>La Ingeniería de Software es la disciplina que aplica principios, métodos y herramientas para el desarrollo, mantenimiento y evolución de software de alta calidad, de manera eficiente y dentro de restricciones de tiempo y costo.</p>
+
+        <p>La Ingeniería de Software es la disciplina que aplica principios, métodos y herramientas para el desarrollo,
+            mantenimiento y evolución de software de alta calidad, de manera eficiente y dentro de restricciones de
+            tiempo y costo.</p>
 
         <div class="grid-equipo">
 
@@ -45,7 +51,9 @@
                 <div class="team-info">
                     <h3>¿Qué es la Ingeniería de Software?</h3>
                     <p class="team-role">Definición</p>
-                    <p>Es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software. Combina ingeniería y ciencias de la computación para producir software confiable y eficiente.</p>
+                    <p>Es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación
+                        y mantenimiento de software. Combina ingeniería y ciencias de la computación para producir
+                        software confiable y eficiente.</p>
                 </div>
             </div>
 
@@ -54,7 +62,9 @@
                 <div class="team-info">
                     <h3>Objetivos Principales</h3>
                     <p class="team-role">Propósitos</p>
-                    <p>Desarrollar software que satisfaga las necesidades del usuario, sea confiable, mantenible, escalable y cumpla con estándares de calidad, todo dentro de restricciones de tiempo, presupuesto y recursos.</p>
+                    <p>Desarrollar software que satisfaga las necesidades del usuario, sea confiable, mantenible,
+                        escalable y cumpla con estándares de calidad, todo dentro de restricciones de tiempo,
+                        presupuesto y recursos.</p>
                 </div>
             </div>
 
@@ -63,7 +73,9 @@
                 <div class="team-info">
                     <h3>Principios Fundamentales</h3>
                     <p class="team-role">Base teórica</p>
-                    <p>Incluye modularidad, abstracción, separación de preocupaciones, anticipación al cambio, jerarquía de control y consistencia. Estos principios guían todas las decisiones durante el ciclo de vida del software.</p>
+                    <p>Incluye modularidad, abstracción, separación de preocupaciones, anticipación al cambio, jerarquía
+                        de control y consistencia. Estos principios guían todas las decisiones durante el ciclo de vida
+                        del software.</p>
                 </div>
             </div>
 
@@ -72,7 +84,8 @@
                 <div class="team-info">
                     <h3>Ciclo de Vida del Software</h3>
                     <p class="team-role">Modelos de desarrollo</p>
-                    <p>Los modelos más utilizados incluyen el modelo en cascada, modelo en espiral, desarrollo ágil, Scrum, Kanban y DevOps. Cada uno se adapta a diferentes tipos de proyectos y necesidades.</p>
+                    <p>Los modelos más utilizados incluyen el modelo en cascada, modelo en espiral, desarrollo ágil,
+                        Scrum, Kanban y DevOps. Cada uno se adapta a diferentes tipos de proyectos y necesidades.</p>
                 </div>
             </div>
 
@@ -87,30 +100,23 @@
 
     <!-- Script del menú hamburguesa -->
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const menuPanel = document.getElementById('menuPanel');
+        const btn = document.getElementById("menu-btn");
+        const panel = document.getElementById("menu-panel");
 
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            menuPanel.classList.toggle('active');
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("active");
+            panel.classList.toggle("active");
         });
 
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.menu-panel a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                menuPanel.classList.remove('active');
-            });
-        });
-
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!menuBtn.contains(e.target) && !menuPanel.contains(e.target)) {
-                menuBtn.classList.remove('active');
-                menuPanel.classList.remove('active');
+        /* Cerrar al hacer clic fuera */
+        document.addEventListener("click", (e) => {
+            if (!btn.contains(e.target) && !panel.contains(e.target)) {
+                btn.classList.remove("active");
+                panel.classList.remove("active");
             }
         });
     </script>
 
 </body>
+
 </html>

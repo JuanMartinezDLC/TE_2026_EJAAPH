@@ -1,17 +1,23 @@
 /* Paleta de colores */
- :root{
-    --principal: #F1F5F9;      /* Texto principal claro */
-    --acento: #6C4CFF;         /* Morado tecnológico */
-    --acento-hover: #8F7CFF;   /* Morado claro */
-    --oscuro: #131d3a;         /* Azul oscuro para tarjetas */
+:root {
+    --principal: #F1F5F9;
+    /* Texto principal claro */
+    --acento: #6C4CFF;
+    /* Morado tecnológico */
+    --acento-hover: #8F7CFF;
+    /* Morado claro */
+    --oscuro: #131d3a;
+    /* Azul oscuro para tarjetas */
     --blanco: #F1F5F9;
     --fondo-gris-suave: #121A33;
     --texto-gris: #C3CAD5;
     --texto-principal: #F1F5F9;
     --texto-secundario: #C3CAD5;
-    --fondo-body: #0A0F1F;     /* Azul muy oscuro */
-    --fondo-header: rgba(18, 15, 48);   /* Semi-transparente */
-    --fondo-cards:  rgb(18, 15, 48);     
+    --fondo-body: #0A0F1F;
+    /* Azul muy oscuro */
+    --fondo-header: rgba(18, 15, 48);
+    /* Semi-transparente */
+    --fondo-cards: rgb(18, 15, 48);
     --fondo-seccion-alt: #0F1730;
     --border-color: rgba(255, 255, 255, 0.1);
 
@@ -27,7 +33,8 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Navegación fluida  */
+    scroll-behavior: smooth;
+    /* Navegación fluida  */
 }
 
 /* H1 — Título principal */
@@ -70,7 +77,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 15px 10%;
-    background-color: var(--fondo-principal);
+    background-color: var(--fondo-header);
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -115,7 +122,7 @@ p {
     border-radius: 15px;
     padding: 20px;
     min-width: 200px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
@@ -192,7 +199,7 @@ body {
     text-align: center;
     padding: 0 10%;
     background: radial-gradient(circle at top right, rgba(108, 76, 255, 0.15), transparent),
-                radial-gradient(circle at bottom left, rgba(143, 124, 255, 0.1), transparent);
+        radial-gradient(circle at bottom left, rgba(143, 124, 255, 0.1), transparent);
     position: relative;
     overflow: hidden;
 }
@@ -259,7 +266,7 @@ body {
 .seccion-card:hover {
     transform: scale(1.05);
     border-color: var(--acento);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .seccion-card .icon {
@@ -285,6 +292,16 @@ body {
     font-size: 0.95rem;
 }
 
+.seccion-titulo {
+    margin: 100px 0 40px 0;
+    text-align: center;
+}
+
+.seccion-titulo h2 {
+    font-size: 2.8rem;
+    color: var(--principal);
+}
+
 /* ==============Apartado 4 y paginas de desarrolladores ============*/
 .desarrolladores {
     padding: 80px 10%;
@@ -293,7 +310,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.desarrolladores > p {
+.desarrolladores>p {
     color: var(--texto-secundario);
     margin-bottom: 50px;
 }
@@ -311,7 +328,7 @@ body {
     padding: 30px 20px;
     width: 100%;
     max-width: 320px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -331,7 +348,7 @@ body {
 /* Micro-interacción: Elevación y Sombra Cian */
 .desarrollador:hover {
     transform: translateY(-15px);
-    box-shadow: 0 15px 30px rgba(0, 168, 204, 0.2); 
+    box-shadow: 0 15px 30px rgba(0, 168, 204, 0.2);
 }
 
 .team-img-wrapper {
@@ -381,7 +398,8 @@ body {
     justify-content: center;
     gap: 15px;
     opacity: 0;
-    transform: translateY(20px); /* Empieza un poco abajo */
+    transform: translateY(20px);
+    /* Empieza un poco abajo */
     transition: all 0.4s ease;
 }
 
@@ -418,6 +436,7 @@ body {
     transition: background-color 0.3s ease;
     position: relative;
 }
+
 /* Efecto de gradiente sutil en el fondo */
 .perfil-completo::before {
     content: '';
@@ -436,7 +455,7 @@ body {
     font-size: 3rem;
 }
 
-.perfil-completo > p {
+.perfil-completo>p {
     color: var(--texto-secundario);
     margin-bottom: 50px;
     font-size: 1.2rem;
@@ -494,6 +513,7 @@ body {
     height: auto;
     border-radius: 50%;
 }
+
 .foto-perfil:hover {
     transform: scale(1.1) rotate(5deg);
 }
@@ -506,4 +526,89 @@ footer {
     padding: 40px 0;
     font-size: 0.8rem;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============ MEDIA QUERIES PARA MÓVIL ============ */
+@media (max-width: 768px) {
+
+    /* Tipografía */
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes de Padding general */
+    .header,
+    .hero,
+    .secciones-grid,
+    .desarrolladores,
+    .perfil-completo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .secciones-grid,
+    .desarrolladores,
+    .perfil-completo {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* Header */
+    .header-right h1 {
+        display: none;
+        /* Ocultamos el H1 del header en móvil para dejar espacio al logo */
+    }
+
+    .menu-panel {
+        left: 20px;
+        right: 20px;
+        min-width: unset;
+    }
+
+    /* Grids */
+    .grid-container,
+    .grid-equipo,
+    .grid-datos {
+        gap: 20px;
+    }
+
+    .seccion-card,
+    .desarrollador,
+    .card {
+        padding: 25px 20px;
+    }
+
+    .foto-perfil {
+        max-width: 200px;
+    }
+
+    /* Perfil Completo */
+    .perfil-completo h2 {
+        font-size: 2.2rem;
+    }
+
+    .seccion-titulo {
+        margin: 40px 0 20px 0;
+    }
+
+    .seccion-titulo h2 {
+        font-size: 2rem;
+    }
 }
